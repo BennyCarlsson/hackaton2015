@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/swipe.css">
+    <link rel="stylesheet" type="text/css" href="css/startPage.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id='mySwipe' class='swipe'>
+      <div class='swipe-wrap'>
+        <div>
+            <div id="historyPage"><h1 class="pageTitle">History!</h1></div>
+        </div>
+        <div class="pageHolderDiv">
+            <div id="startPage">
+                <main>
+                    <div class="startPageWraper">
+                        <div id="startPageSkip" class="startPageSkipVideo" v-on:click="startPageSkipClick"><i class="material-icons startPageBottomButtons">skip_next</i></div>
+                        <div id="startPageSavedArticels" class="startPageGotToNewsPage" v-on:click="startPageViewSaved"><i class="material-icons startPageBottomButtons">format_list_bulleted</i></div>
+
+                        <div class="startPageNewsButtonWrap">
+                        <div id="startPageNews_button" v-on:click="startPageButtonClick" class="startPageNewsButton"><i class="material-icons startPagePlayIcon">play_arrow</i></div>
+
+                        </div>
+                        <div id="startPageVideo-holder"></div>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <div>
+            <div id="articlePage"><h1 class="pageTitle">Articles!</h1></div>
+        </div>
+      </div>
+    </div>
+    <script src="js/vue.js"></script>
+    <script src="js/startPage.js"></script>
+    <script src='js/swipe.js'></script>
+    <script src='js/mySwipeJs.js'></script>
+</body>
+</html>
