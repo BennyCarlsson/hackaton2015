@@ -94,14 +94,12 @@ html, body {
 
 .startPageVideoCounter{
     color: white;
-    color: white;
     position: absolute;
-    right: 0;
+    
     top: 0;
-    padding: 16px;
 
-    height: 100px;
-    width: 100px;
+    height: 4px;
+    width: 100%;
     border-radius: 50%;
 }
 

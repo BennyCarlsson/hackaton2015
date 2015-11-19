@@ -111,7 +111,7 @@ sp.vue.videoTemplate = function(){
     return Vue.extend({
         template: '<div class="startPageVideoWrap animmaBig">'+
         '<div><div v-on:click="startPagecloseVideo" class="startPageCloseVideo"><i class="material-icons">arrow_back</i></div>'+
-        '<div><progress value="0" max="100" class="startPageVideoCounter"></progress></div>'+
+        '<div><div class=""></div><progress value="0" max="100" class="startPageVideoCounter"></progress></div>'+
         '<video v-on:click="startPageVideoSkip" v-bind:src="videoSrc" class="startPageVideo animmaBig" autoplay></video>'+
         '</div></div>'
     });
