@@ -124,8 +124,13 @@ sp.vue.videoView = function(VideoTemplate, data){
 
             function updateCountdown() {
                 var progress = document.querySelector('.startPageVideoCounter');
-                progress.max = videoEl.duration;
-                progress.value = videoEl.duration - videoEl.currentTime;
+                try {
+                    progress.max = videoEl.duration;
+                    progress.value = videoEl.duration - videoEl.currentTime;
+                } catch (e) {
+
+                }
+
             }
         }
     });
