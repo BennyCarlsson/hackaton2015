@@ -26,11 +26,20 @@ sp.IsEmergency = function(){
 };
 
 sp.vue.emergencyView = function(EmergencyButtonTemplate){
+    var click = true;
     return new EmergencyButtonTemplate({
         replace: false,
         methods: {
             emergencyButtonClick: function(){
+                var emergencyArticleView;
+                if(click){
+                    this.$el.querySelector(".startPageEmergencyArticleWrap").classList.add("animmaMoveDownFullPage");
+                    emergencyArticleView = sp.vue.emergencyArticleView(sp.vue.emergencyArticleTemplate());
+                    sp.vue.mountEmergencyArticleTemplate(emergencyArticleView);
+                    click = false;
+                }else if(!click){
 
+                }
             }
         }
     });
@@ -38,13 +47,40 @@ sp.vue.emergencyView = function(EmergencyButtonTemplate){
 
 sp.vue.emergencyButtonTemplate = function(){
     return Vue.extend({
-        template: '<div class="startPageEmergencyWrap">'+
-            '<div class="startPageEmergencyArrowLeft"><i class="material-icons">arrow_upward</i></div>'+
+        template:
+            '<div id="startPageEmergencyTemplateHolder" class="startPageEmergencyArticleWrap"></div>'+
+            '<div v-on:click="emergencyButtonClick" class="startPageEmergencyWrap">'+
+
+            '<div class="startPageEmergencyArrowLeft"><i class="material-icons">arrow_downward</i></div>'+
             '<div class="startPageEmergencytitle">Just nu!</div>'+
             '<div class="startPageEmergencyIngress">SPIIK hackaton pågår och studenter från Linneuni...</div>'+
-            '<div class="startPageEmergencyArrowRight"><i class="material-icons">arrow_upward</i></div>'+
+            '<div class="startPageEmergencyArrowRight"><i class="material-icons">arrow_downward</i></div>'+
+            '<div id="startPageEmergencyNewsArticle"></div>'+
         '</div>'
     });
+};
+
+sp.vue.emergencyArticleView = function(EmergencyArticleTemplate){
+    return new EmergencyArticleTemplate({
+        replace: false,
+        methods: {
+
+        }
+    });
+};
+
+sp.vue.emergencyArticleTemplate = function(){
+    return Vue.extend({
+        template: '<div class="startPageEmergencyArticleWrap2">'+
+            '<div class="startPageEmergencyArticleTitle"><h1>Ny Ölandsbro på gång </h1></div>'+
+            '<div class="startPageEmergencyArticleIngress"><b>Planer på att utveckla och rusta upp Ölandsbron cirkulerar hos kommunen. Något som behöver genomföras men som hindras av ekonomin. </b></div>'+
+            '<div class="startPageEmergencyArticleContent">Ölandsbron är i behov av en renovering. Detta märktes av kustbevakningen då flera muttrar börjat lossna från bron och träffat båten. Flera anmälningar till kommunen samt polisen kring liknande händelser har rapporterats in. Ansvarig på kommunen ser seriöst på problemet och har sedan tre veckor tillbaka startar ett renoveringsprojekt av Ölandsbron. </div>'+
+            '</div>'
+    });
+};
+
+sp.vue.mountEmergencyArticleTemplate = function(EmergencyButtonView){
+    EmergencyButtonView.$mount().$appendTo('#startPageEmergencyTemplateHolder');
 };
 
 sp.vue.mountEmergencyButtonView = function(EmergencyButtonView){
@@ -83,10 +119,14 @@ sp.vue.videoView = function(VideoTemplate, data){
             startPagecloseVideo: function(){
                 var el = this.$el.querySelector(".startPageVideoWrap");
                 el.classList.add("animmaSmall");
-                el.addEventListener("animationend", function(){
-                        this.$destroy(this);
 
-                }.bind(this), false);
+                var self = this;
+                function ev(){
+                    self.$destroy(self);
+                    el.removeEventListener("animationend", ev);
+                }
+                el.removeEventListener("animationend", ev);
+                el.addEventListener("animationend", ev, false);
 
             },
 
@@ -112,8 +152,8 @@ sp.vue.videoView = function(VideoTemplate, data){
                             j++;
                         } while (videoElem.currentTime < data.skips[j]);
                     }else{
-
                     }*/
+
                     videoElem.currentTime = data.skips[i];
                     counter.innerHTML = (i+2)+"/"+data.skips.length;
                     i++;
@@ -127,10 +167,29 @@ sp.vue.videoView = function(VideoTemplate, data){
             counter.innerHTML = i+1+"/"+data.skips.length;
 
             videoEl.addEventListener('timeupdate', updateCountdown);
+            var el = this.$el.querySelector(".startPageVideoWrap");
 
+            function ev(){
+                el.removeEventListener("animationend", ev);
+            }
+
+            el.removeEventListener("animationend", ev);
+            el.addEventListener("animationend", ev, false);
+
+
+            var self = this;
             function updateCountdown() {
                 var progress = document.querySelector('.startPageVideoCounter');
                 try {
+
+                    if(videoEl.currentTime >= videoEl.duration){
+                        try {
+                            mySwipe.next();
+                        } catch (e) {
+
+                        }
+                        self.$destroy(self);
+                    }
                     progress.max = videoEl.duration;
                     progress.value = videoEl.duration - videoEl.currentTime;
                 } catch (e) {
