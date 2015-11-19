@@ -1,0 +1,126 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    background-color: #26A69A;
+}
+
+.startPageWraper{
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
+}
+
+.startPageNewsButtonWrap{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+}
+
+.startPageNewsButton{
+    background-color: white;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    line-height: 200px;
+    color: white;
+    font-size: 20px;
+}
+
+.startPageNewsButton:active{
+    background-color: gray;
+}
+
+.startPagePlayIcon{
+    line-height: 200px;
+    font-size: 120px;
+    color: black;
+}
+
+/*animations*/
+.animmaBig {
+  animation-name: zoomIn;
+  animation-duration: .3s;
+  animation-timing-function: cubic-bezier(0.39, 0.58, 0.54, 0.99);
+  animation-fill-mode: forwards;
+}
+
+.animmaSmall {
+  animation-name: zoomOut;
+  animation-duration: .3s;
+  animation-timing-function: ubic-bezier(0.39, 0.58, 0.54, 0.99);
+  animation-fill-mode: forwards;
+}
+
+/*video*/
+.startPageVideoWrap{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 200px;
+    height: 200px;
+
+    background-color: black;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+}
+
+.startPageCloseVideo{
+    color: white;
+    position: absolute;
+    top: 0;
+    float: right;
+    padding-left: 16px;
+    padding-top: 16px;
+    padding-right: 16px;
+    z-index: 2;
+}
+
+.video{
+    width: 100%;
+}
+
+.startPageVideoCounter{
+    color: white;
+    color: white;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 16px;
+
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+/*skipVidep*/
+
+.startPageBottomButtons{
+    font-size: 36px;
+}
+
+.startPageSkipVideo{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 16px;
+}
+
+.startPageGotToNewsPage{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 16px;
+}
