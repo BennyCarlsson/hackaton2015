@@ -1,0 +1,12 @@
+{
+"globals": {
+    "console": false,
+    "window": false,
+    "document": false,
+    "XMLHttpRequest": false,
+    "Vue": false,
+    "throw": false,
+    "setTimeout": false,
+    "Android": false
+    }
+}
