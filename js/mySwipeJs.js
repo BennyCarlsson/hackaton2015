@@ -1,7 +1,7 @@
 // pure JS
 var elem = document.getElementById('mySwipe');
 window.mySwipe = Swipe(elem, {
-    startSlide: 0,
+    startSlide: 2,
     continuous: false
 });
 var startPageSkip = document.getElementById('startPageSkip');

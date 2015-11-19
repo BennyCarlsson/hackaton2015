@@ -61,8 +61,8 @@
             <div id="articlePage">
                 <div id="articlePageArticleHeader"></div>
                 <div class="articleArticleWrapper">
-                    <div class="articleArticleDiv">
-                        <div class="artcleTitleNumberWrap">
+                    <div class="articleArticleDiv" onclick="onClickShowArticle(1)">
+                        <div class="articleTitleNumberWrap">
                             <div class="articleArticleNumber">
                                 <p>1.</p>
                             </div>
@@ -161,6 +161,18 @@
                     </div>
                 </div>
             </div>
+            <div class="articleHiddenArticle"
+            id="articleArticleOne">
+                <div class="articleArticleCloseButton"
+                onclick="onClickRemoveArticle()">
+                    <i class="material-icons">close</i>
+                </div>
+                <h2>Banan</h2>
+                <img src="image/sbanana.jpg" alt="banana">
+                <div id="articleArticleTextWrapper">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                </div>
+            </div>
         </div>
       </div>
     </div>
@@ -168,5 +180,6 @@
     <script src="js/startPage.js"></script>
     <script src='js/swipe.js'></script>
     <script src='js/mySwipeJs.js'></script>
+    <script src='js/article.js'></script>
 </body>
 </html>
