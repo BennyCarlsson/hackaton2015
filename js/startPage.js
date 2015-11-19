@@ -6,12 +6,49 @@ sp.css = sp.css || {};
 
 sp.init = function(){
     var playButton, skippButton, savedArticelsButton;
+
+    if(sp.IsEmergency()){
+        var emergencyButtonView = sp.vue.emergencyView(sp.vue.emergencyButtonTemplate());
+        sp.vue.mountEmergencyButtonView(emergencyButtonView);
+    }
+
     sp.css.buildAnimationZoomIn();
     sp.css.buildAnimationZoomOut();
     playButton = sp.vue.startButton();
     skippButton = sp.vue.skipVideo();
     savedArticelsButton = sp.vue.savedArticels();
     // commitFix!
+};
+
+sp.IsEmergency = function(){
+    //return true;
+    return Math.floor((Math.random() * 4) + 1) < 2;
+};
+
+sp.vue.emergencyView = function(EmergencyButtonTemplate){
+    return new EmergencyButtonTemplate({
+        replace: false,
+        methods: {
+            emergencyButtonClick: function(){
+
+            }
+        }
+    });
+};
+
+sp.vue.emergencyButtonTemplate = function(){
+    return Vue.extend({
+        template: '<div class="startPageEmergencyWrap">'+
+            '<div class="startPageEmergencyArrowLeft"><i class="material-icons">arrow_upward</i></div>'+
+            '<div class="startPageEmergencytitle">Just nu!</div>'+
+            '<div class="startPageEmergencyIngress">SPIIK hackaton pågår och studenter från Linneuni...</div>'+
+            '<div class="startPageEmergencyArrowRight"><i class="material-icons">arrow_upward</i></div>'+
+        '</div>'
+    });
+};
+
+sp.vue.mountEmergencyButtonView = function(EmergencyButtonView){
+    EmergencyButtonView.$mount().$appendTo('#startPageEmergency');
 };
 
 // returns video json

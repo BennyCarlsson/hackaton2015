@@ -18,6 +18,7 @@ html, body {
     top: 50%;
     transform: translate(-50%, -50%);
     width: 204px;
+    height: 228px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -34,6 +35,8 @@ html, body {
     color: white;
     font-size: 20px;
     border: 2px solid black;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 .startPageNewsButton:active{
@@ -127,6 +130,18 @@ html, body {
 
 .startPageBottomButtons{
     font-size: 36px;
+
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: white;
+}
+
+.startPageBottomButtons:active{
+    background-color: gray;
 }
 
 .startPageSkipVideo{
@@ -215,4 +230,41 @@ progress::-webkit-progress-value {
 /* Polyfill */
 progress[aria-valuenow]:before  {
     background: white;
+}
+
+
+/*Emergency*/
+
+.startPageEmergencyWrap{
+    position: relative;
+    background: #F44336;
+    color: white;
+    padding: 0px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.startPageEmergencyArrowLeft{
+    position: absolute;
+    left: 16px;
+    top: 16px;
+}
+
+.startPageEmergencyArrowRight{
+    position: absolute;
+    right: 16px;
+    top: 16px;
+}
+
+.startPageEmergencytitle{
+    text-align: center;
+    font-size: 24px;
+}
+
+.startPageEmergencyIngress{
+    font-size: 14px;
+    margin-left: 16px;
+    margin-right: 16px;
+    text-align: center;
 }
