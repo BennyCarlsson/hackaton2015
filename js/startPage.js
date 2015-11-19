@@ -22,7 +22,7 @@ sp.init = function(){
 
 sp.IsEmergency = function(){
     //return true;
-    return Math.floor((Math.random() * 4) + 1) < 2;
+    return Math.floor((Math.random() * 4) + 1) < 3;
 };
 
 sp.vue.emergencyView = function(EmergencyButtonTemplate){
@@ -33,8 +33,19 @@ sp.vue.emergencyView = function(EmergencyButtonTemplate){
             emergencyButtonClick: function(){
                 var emergencyArticleView;
                 if(click){
-                    this.$el.querySelector(".startPageEmergencyArticleWrap").classList.add("animmaMoveDownFullPage");
-                    emergencyArticleView = sp.vue.emergencyArticleView(sp.vue.emergencyArticleTemplate());
+                    var el = this.$el.querySelector(".startPageEmergencyArticleWrap");
+                    el.classList.add("animmaMoveDownFullPage");
+                    var self = this;
+
+                    function ev(){
+                        self.$el.removeChild(self.$el.querySelector(".startPageEmergencyWrap"));
+                        el.removeEventListener("animationend", ev);
+                    }
+
+                    el.removeEventListener("animationend", ev);
+                    el.addEventListener("animationend", ev, false);
+
+                    emergencyArticleView = sp.vue.emergencyArticleView(sp.vue.emergencyArticleTemplate(), this);
                     sp.vue.mountEmergencyArticleTemplate(emergencyArticleView);
                     click = false;
                 }else if(!click){
@@ -50,21 +61,28 @@ sp.vue.emergencyButtonTemplate = function(){
         template:
             '<div id="startPageEmergencyTemplateHolder" class="startPageEmergencyArticleWrap"></div>'+
             '<div v-on:click="emergencyButtonClick" class="startPageEmergencyWrap">'+
-
             '<div class="startPageEmergencyArrowLeft"><i class="material-icons">arrow_downward</i></div>'+
             '<div class="startPageEmergencytitle">Just nu!</div>'+
             '<div class="startPageEmergencyIngress">SPIIK hackaton pågår och studenter från Linneuni...</div>'+
+            '<div class="startPageEmergencyTimeStamp">10min sedan</div>'+
             '<div class="startPageEmergencyArrowRight"><i class="material-icons">arrow_downward</i></div>'+
             '<div id="startPageEmergencyNewsArticle"></div>'+
         '</div>'
     });
 };
 
-sp.vue.emergencyArticleView = function(EmergencyArticleTemplate){
+sp.vue.emergencyArticleView = function(EmergencyArticleTemplate, emergencyHolder){
     return new EmergencyArticleTemplate({
         replace: false,
         methods: {
-
+            closeView: function(){
+                console.log("lick");
+                console.log();
+                //emergencyHolder.$el.querySelector(".startPageEmergencyArticleWrap").classList.remove("animmaMoveDownFullPage");
+                //emergencyHolder.$el.querySelector(".startPageEmergencyArticleWrap").classList.remove("animmaMoveUp");
+                emergencyHolder.$destroy(emergencyHolder);
+                this.$destroy(this);
+            }
         }
     });
 };
@@ -72,6 +90,7 @@ sp.vue.emergencyArticleView = function(EmergencyArticleTemplate){
 sp.vue.emergencyArticleTemplate = function(){
     return Vue.extend({
         template: '<div class="startPageEmergencyArticleWrap2">'+
+            '<div class="startPageEmergencyClose" v-on:click="closeView"><i class="material-icons">close</i></div>'+
             '<div class="startPageEmergencyArticleTitle"><h1>Ny Ölandsbro på gång </h1></div>'+
             '<div class="startPageEmergencyArticleIngress"><b>Planer på att utveckla och rusta upp Ölandsbron cirkulerar hos kommunen. Något som behöver genomföras men som hindras av ekonomin. </b></div>'+
             '<div class="startPageEmergencyArticleContent">Ölandsbron är i behov av en renovering. Detta märktes av kustbevakningen då flera muttrar börjat lossna från bron och träffat båten. Flera anmälningar till kommunen samt polisen kring liknande händelser har rapporterats in. Ansvarig på kommunen ser seriöst på problemet och har sedan tre veckor tillbaka startar ett renoveringsprojekt av Ölandsbron. </div>'+
