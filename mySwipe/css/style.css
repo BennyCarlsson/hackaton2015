@@ -1,0 +1,44 @@
+/* Swipe 2 required styles */
+html,body{
+    margin:0px;
+}
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > div {
+  float:left;
+  width:100%;
+  position: relative;
+}
+/* --------------------------- */
+#historyPage{
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    max-height: 100vh;
+    background-color: red;
+}
+#startPage{
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    max-height: 100vh;
+    background-color: blue;
+}
+#articlePage{
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    max-height: 100vh;
+    background-color: yellow;
+}
+.pageTitle{
+    margin:auto;
+    text-align: center;
+}

@@ -7,16 +7,24 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-
     <title>Document</title>
 </head>
 <body>
-    <div id='slider' class='swipe'>
+    <div id='mySwipe' class='swipe'>
       <div class='swipe-wrap'>
-        <div><h1>History</h1></div>
-        <div><h1>Start</h1></div>
-        <div><h1>Video</h1></div>
+        <div>
+            <div id="historyPage"><h1 class="pageTitle">History!</h1></div>
+        </div>
+        <div class="pageHolderDiv">
+            <div id="startPage"><h1 class="pageTitle">Start!</h1></div>
+        </div>
+        <div>
+            <div id="articlePage"><h1 class="pageTitle">Articles!</h1></div>
+        </div>
       </div>
     </div>
+
+    <script src='js/swipe.js'></script>
+    <script src='js/mySwipeJs.js'></script>
 </body>
 </html>
