@@ -1,6 +1,7 @@
 /* Swipe 2 required styles */
 html,body{
     margin:0px;
+    background-color: #26A69A;
 }
 .swipe {
   overflow: hidden;

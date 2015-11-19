@@ -85,6 +85,7 @@ sp.vue.videoView = function(VideoTemplate, data){
                 el.classList.add("animmaSmall");
                 el.addEventListener("animationend", function(){
                         this.$destroy(this);
+
                 }.bind(this), false);
 
             },
@@ -95,6 +96,11 @@ sp.vue.videoView = function(VideoTemplate, data){
 
                 if(i == (data.skips.length-1)){
                     // TODO: call swipe function
+                    try {
+                        mySwipe.next();
+                    } catch (e) {
+
+                    }
                     this.$destroy(this);
 
                 }else if(i < data.skips.length){
