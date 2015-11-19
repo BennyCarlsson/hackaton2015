@@ -11,6 +11,7 @@ sp.init = function(){
     playButton = sp.vue.startButton();
     skippButton = sp.vue.skipVideo();
     savedArticelsButton = sp.vue.savedArticels();
+    // commitFix!
 };
 
 // returns video json
@@ -61,7 +62,7 @@ sp.vue.videoView = function(VideoTemplate, data){
 
                 }else if(i < data.skips.length){
 
-                    // TODO: video jumps 
+                    // TODO: video jumps
                     /*if(videoElem.currentTime > data.skips[i]){
                         var j = 0;
                         do {
