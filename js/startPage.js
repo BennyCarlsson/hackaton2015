@@ -53,12 +53,25 @@ sp.vue.videoView = function(VideoTemplate, data){
 
             startPageVideoSkip: function(){
                 var videoElem = this.$el.querySelector("video");
+                var counter = this.$el.querySelector(".startPageVideoCounterText");
 
                 if(i == (data.skips.length-1)){
+                    // TODO: call swipe function
                     this.$destroy(this);
 
                 }else if(i < data.skips.length){
+
+                    // TODO: video jumps 
+                    /*if(videoElem.currentTime > data.skips[i]){
+                        var j = 0;
+                        do {
+                            j++;
+                        } while (videoElem.currentTime < data.skips[j]);
+                    }else{
+
+                    }*/
                     videoElem.currentTime = data.skips[i];
+                    counter.innerHTML = (i+2)+"/"+data.skips.length;
                     i++;
                 }
             },
@@ -66,6 +79,9 @@ sp.vue.videoView = function(VideoTemplate, data){
 
         attached: function(){
             var videoEl = this.$el.querySelector("video");
+            var counter = this.$el.querySelector(".startPageVideoCounterText");
+            counter.innerHTML = i+1+"/"+data.skips.length;
+
             videoEl.addEventListener('timeupdate', updateCountdown);
 
             function updateCountdown() {
@@ -83,7 +99,7 @@ sp.vue.skipVideo = function(){
         el: "#startPageSkip",
         methods: {
             startPageSkipClick: function(){
-                console.log("skipp video!");
+                //console.log("skipp video!");
             }
         }
     });
@@ -95,7 +111,7 @@ sp.vue.savedArticels = function(){
         el: "#startPageSavedArticels",
         methods: {
             startPageViewSaved: function(){
-                console.log("im going to look att my saved articles");
+                //console.log("im going to look att my saved articles");
             }
         }
     });
@@ -111,7 +127,7 @@ sp.vue.videoTemplate = function(){
     return Vue.extend({
         template: '<div class="startPageVideoWrap animmaBig">'+
         '<div><div v-on:click="startPagecloseVideo" class="startPageCloseVideo"><i class="material-icons">arrow_back</i></div>'+
-        '<div><div class=""></div><progress value="0" max="100" class="startPageVideoCounter"></progress></div>'+
+        '<div><div class="startPageVideoCounterWrap"><div class="startPageVideoCounterText"></div></div><progress value="0" max="100" class="startPageVideoCounter"></progress></div>'+
         '<video v-on:click="startPageVideoSkip" v-bind:src="videoSrc" class="startPageVideo animmaBig" autoplay></video>'+
         '</div></div>'
     });

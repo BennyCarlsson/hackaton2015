@@ -17,7 +17,7 @@ html, body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 200px;
+    width: 204px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -33,6 +33,7 @@ html, body {
     line-height: 200px;
     color: white;
     font-size: 20px;
+    border: 2px solid black;
 }
 
 .startPageNewsButton:active{
@@ -95,12 +96,31 @@ html, body {
 .startPageVideoCounter{
     color: white;
     position: absolute;
-    
+
     top: 0;
 
     height: 4px;
     width: 100%;
     border-radius: 50%;
+}
+
+.startPageVideoCounterWrap{
+    border: 2px solid white;
+    border-radius: 20%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 34px;
+    width: 34px;
+    margin: 16px;
+
+    text-align: center;
+    line-height: 34px;
+    background-color: rgba(211, 211, 211, 0.42);
+}
+
+.startPageVideoCounterText{
+    color: white;
 }
 
 /*skipVidep*/
@@ -121,4 +141,78 @@ html, body {
     bottom: 0;
     left: 0;
     padding: 16px;
+}
+
+
+
+
+
+progress,          /* All HTML5 progress enabled browsers */
+progress[role]     /* polyfill */
+{
+
+    /* Turns off styling - not usually needed, but good to know. */
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+
+    /* gets rid of default border in Firefox and Opera. */
+    border: none;
+
+    /* Needs to be in here for Safari polyfill so background images work as expected. */
+    background-size: auto;
+
+    /* Dimensions */
+    width: 400px;
+    height: 60px;
+
+}
+/* Polyfill */
+progress[role]:after {
+        background-image: none; /* removes default background from polyfill */
+}
+
+/* Ensure fallback text doesn't appear in polyfill */
+progress[role] strong {
+        display: none;
+}
+
+/* This sets the dimensions of our sample PB element*/
+#test_bar {
+  -webkit-appearance: none;
+  border: solid 1px black;
+  width: 200px;
+  height: 20px;
+}
+
+/* Background Colors  */
+progress,                          /* Firefox  */
+progress[role][aria-valuenow] {    /* Polyfill */
+   background: black !important; /* !important is needed by the polyfill */
+}
+
+/* Chrome */
+progress::-webkit-progress-bar {
+    background: black;
+}
+
+/* Foreground Colors   */
+/* IE10 */
+progress {
+    color: white;
+}
+
+/* Firefox */
+progress::-moz-progress-bar {
+    background: white;
+}
+
+/* Chrome */
+progress::-webkit-progress-value {
+    background: white;
+}
+
+/* Polyfill */
+progress[aria-valuenow]:before  {
+    background: white;
 }
