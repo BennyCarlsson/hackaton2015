@@ -149,13 +149,13 @@ html,body{
         right: -100vw;
     }
 }
-#articleArticleOne{
+#articleShowStylerThingie{
     text-align: center;
 }
-#articleArticleOne h2{
+#articleShowStylerThingie h2{
     font-size: 20px;
 }
-#articleArticleOne img{
+#articleShowStylerThingie img{
     width: 260px;
     height: 99px;
 }
@@ -163,7 +163,7 @@ html,body{
     text-align: left;
     margin: 20px;
 }
-#articleArticleOne p{
+#articleShowStylerThingie p{
     font-size: 16px;
 }
 .articleArticleCloseButton{
