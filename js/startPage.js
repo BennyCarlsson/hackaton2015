@@ -21,8 +21,8 @@ sp.init = function(){
 };
 
 sp.IsEmergency = function(){
-    //return true;
-    return Math.floor((Math.random() * 4) + 1) < 3;
+    return true;
+    //return Math.floor((Math.random() * 4) + 1) < 3;
 };
 
 sp.vue.emergencyView = function(EmergencyButtonTemplate){
@@ -76,11 +76,18 @@ sp.vue.emergencyArticleView = function(EmergencyArticleTemplate, emergencyHolder
         replace: false,
         methods: {
             closeView: function(){
-                console.log("lick");
-                console.log();
                 //emergencyHolder.$el.querySelector(".startPageEmergencyArticleWrap").classList.remove("animmaMoveDownFullPage");
                 //emergencyHolder.$el.querySelector(".startPageEmergencyArticleWrap").classList.remove("animmaMoveUp");
-                emergencyHolder.$destroy(emergencyHolder);
+                emergencyHolder.$el.classList.add("animmaIntoSaved");
+
+                function ev(){
+                    emergencyHolder.$destroy(emergencyHolder);
+                    //emergencyHolder.$el.removeEventListener("animationend", ev);
+                }
+
+                //emergencyHolder.$el.removeEventListener("animationend", ev);
+                emergencyHolder.$el.addEventListener("animationend", ev, false);
+
                 this.$destroy(this);
             }
         }
@@ -91,9 +98,9 @@ sp.vue.emergencyArticleTemplate = function(){
     return Vue.extend({
         template: '<div class="startPageEmergencyArticleWrap2">'+
             '<div class="startPageEmergencyClose" v-on:click="closeView"><i class="material-icons">close</i></div>'+
-            '<div class="startPageEmergencyArticleTitle"><h1>Ny Ölandsbro på gång </h1></div>'+
-            '<div class="startPageEmergencyArticleIngress"><b>Planer på att utveckla och rusta upp Ölandsbron cirkulerar hos kommunen. Något som behöver genomföras men som hindras av ekonomin. </b></div>'+
-            '<div class="startPageEmergencyArticleContent">Ölandsbron är i behov av en renovering. Detta märktes av kustbevakningen då flera muttrar börjat lossna från bron och träffat båten. Flera anmälningar till kommunen samt polisen kring liknande händelser har rapporterats in. Ansvarig på kommunen ser seriöst på problemet och har sedan tre veckor tillbaka startar ett renoveringsprojekt av Ölandsbron. </div>'+
+            '<div class="startPageEmergencyArticleTitle"><h1>Hackaton mellan studenter och företag</h1></div>'+
+            '<div class="startPageEmergencyArticleIngress"><b>Ett hackaton mellan studentföreningen SPIIK från Linnéuniversitetet och företag</b></div>'+
+            '<div class="startPageEmergencyArticleContent"><img id="startPageEmergencyBild" src="http://www.beliefnet.com/columnists/bemore/files/2013/11/bigstock-Hacker-Typing-On-A-Laptop-44548564.jpg" alt="">Företagen Infomaker och Gota Media är i full gång. Idéer och koncept för framtidens nyhetskällor produceras i mängder men bara en idé kan vinna. Vinnaren presenteras senare under dagen</div>'+
             '</div>'
     });
 };

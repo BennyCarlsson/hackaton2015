@@ -316,22 +316,31 @@ progress[aria-valuenow]:before  {
     }
 }
 
-.animmaMoveUp {
+.animmaIntoSaved {
     z-index: 2;
     overflow: auto;
-    animation-name: moveUpFullPage;
+    animation-name: moveIntoSaved;
     animation-duration: .3s;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
 }
 
-@keyframes moveUpFullPage{
+@keyframes moveIntoSaved{
     0% {
-        height: 100vh;
+        width: 100%;
+        /*left: 0vw;*/
 
     }
 
     100% {
-        height: 0vh;
+        width: 0%;
+        /*left: -100vw;*/
     }
+}
+
+#startPageEmergencyBild{
+    width: 200px;
+    height: 200px;
+    display:block;
+    margin: auto;
 }
