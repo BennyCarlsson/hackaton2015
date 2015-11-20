@@ -34,3 +34,35 @@ var onClickRemoveArticle = function(){
     elem.removeEventListener("animationend", ev);
     elem.addEventListener("animationend", ev, false);
 };
+
+
+/*--- show hide for historyPage---*/
+var onClickShowHistoryArticle = function(number){
+    switch (number) {
+            case 1:
+                document.getElementById("articleArticleHistoryOne").className = "articleShowHistoryArticle";
+                break;
+            case 2:
+                document.getElementById("articleArticleHistoryTwo").className = "articleShowHistoryArticle";
+                break;
+            case 3:
+                document.getElementById("articleArticleHistoryThree").className = "articleShowHistoryArticle";
+                break;
+            default:
+                break;
+        }
+}
+
+var onClickRemoveHistoryArticle = function(){
+    var element = document.querySelector('.articleShowHistoryArticle');
+    element.className = "articleRemovedHistoryArticle";
+    var elem = document.querySelector('.articleRemovedHistoryArticle');
+
+    function ev(){
+        var element = document.querySelector('.articleRemovedHistoryArticle');
+        element.className = "articleHiddenArticle";
+        elem.removeEventListener("animationend", ev);
+    }
+    elem.removeEventListener("animationend", ev);
+    elem.addEventListener("animationend", ev, false);
+};

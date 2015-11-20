@@ -19,19 +19,60 @@
                         <i class="material-icons logo">folder</i>
                         <i class="material-icons settingsLogo">settings</i>
                     </div>
-                    <div class="articleArticleWrapper">
-                        <div class="articleArticleDiv">
-                            <div class="artcleTitleNumberWrap">
-                                <div class="articleArticleNumber">
-                                    <p>1.</p>
+                    <div id="historyEmergencyNewsWrapper">
+                        <div id="historyRightNow">
+                            <p id="historyRightNowText"><span id="underlineSpan">Just nu</span><span id="historyTimeText">11min sedan</span></p>
+                        </div>
+
+                        <div class="articleArticleWrapper articleArticleWrapperHistoryEmergency">
+                            <div class="articleArticleDiv" onclick="onClickShowHistoryArticle(3)">
+                                <div class="artcleTitleNumberWrap">
+                                    <div class="articleArticleTitle">
+                                        <h3>Hackaton mellan studenter...</h3>
+                                    </div>
                                 </div>
+                                <div class="articleArticleTextImageWrapper">
+                                    <div class="articleArticleText">
+                                        <p>Ett hackaton mellan studentföreningen..</p>
+                                    </div>
+                                    <div class="articleArticleImage">
+                                        <img src="http://www.bsc.se/wp-content/uploads/Svenska-fans.jpg" alt="banana">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="historySavedNews">
+                            <p id="historySavedText">Sparade</p>
+                        </div>
+                    </div>
+                    <div class="articleArticleWrapper">
+                        <div class="articleArticleDiv" onclick="onClickShowHistoryArticle(2)">
+                            <div class="artcleTitleNumberWrap">
+                                <div class="articleArticleTitle">
+                                    <h3>Sverige till EM</h3>
+                                </div>
+                            </div>
+                            <div class="articleArticleTextImageWrapper">
+                                <div class="articleArticleText">
+                                    <p>Sverige klara för EM 2016 i Frankrike när dom vann mot danmark..</p>
+                                </div>
+                                <div class="articleArticleImage">
+                                    <img src="http://www.bsc.se/wp-content/uploads/Svenska-fans.jpg" alt="banana">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="articleArticleWrapper">
+                        <div class="articleArticleDiv" onclick="onClickShowHistoryArticle(1)">
+                            <div class="artcleTitleNumberWrap">
                                 <div class="articleArticleTitle">
                                     <h3>Ny Ölandsbro på gång</h3>
                                 </div>
                             </div>
                             <div class="articleArticleTextImageWrapper">
                                 <div class="articleArticleText">
-                                    <p></p>
+                                    <p>Planer på att utveckla och rusta upp Ölandsbron cirkulerar hos kommunen.</p>
                                 </div>
                                 <div class="articleArticleImage">
                                     <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/%C3%96landsbron.jpg" alt="banana">
@@ -40,6 +81,71 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="articleHiddenHistoryArticle"
+                id="articleArticleHistoryOne">
+                    <div id=articleShowStylerThingie>
+                        <div class="articleArticleCloseButton"
+                        onclick="onClickRemoveHistoryArticle()">
+                            <i class="material-icons">close</i>
+                        </div>
+                        <h2>Ny Ölandsbro på gång</h2>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/%C3%96landsbron.jpg" alt="banana">
+                        <div id="articleArticleIngress6" class="articleArticleIngressText ">
+                            <b>Planer på att utveckla och rusta upp Ölandsbron cirkulerar hos kommunen.
+                                Något som behöver genomföras men som hindras av ekonomin.</b>
+                        </div>
+                        <div id="articleArticleTextWrapper">
+                            <p>Ölandsbron är i behov av en renovering. Detta märktes av kustbevakningen då flera
+                                muttrar börjat lossna från bron och träffat hytten. Flera anmälningar till kommunen
+                                samt polisen kring liknande händelser har rapporterats in. Ansvarig på kommunen ser
+                                seriöst på problemet och har sedan tre veckor tillbaka startar ett renoveringsprojekt av
+                                Ölandsbron som tyvärr bromsas av ekonomin.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="articleHiddenHistoryArticle"
+                id="articleArticleHistoryTwo">
+                    <div id=articleShowStylerThingie>
+                        <div class="articleArticleCloseButton"
+                        onclick="onClickRemoveHistoryArticle()">
+                            <i class="material-icons">close</i>
+                        </div>
+                        <h2>Sverige till EM</h2>
+                        <img src="http://www.bsc.se/wp-content/uploads/Svenska-fans.jpg" alt="banana">
+                        <div id="articleArticleIngress8" class="articleArticleIngressText ">
+                            <b>Sverige vann i lördagen mot Danmark och gick vidare till EM i Frankrike</b>
+                        </div>
+                        <div id="articleArticleTextWrapper">
+                            <p> Ja, alltså jag kollar ju inte så mycket på nyheter, men tydligen så vann Sverige något troligen fotboll då.
+                            Hörde att finalen ska vara i Frankrike det är ju ganska coolt.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="articleHiddenHistoryArticle"
+                id="articleArticleHistoryThree">
+                    <div id=articleShowStylerThingie>
+                        <div class="articleArticleCloseButton"
+                        onclick="onClickRemoveHistoryArticle()">
+                            <i class="material-icons">close</i>
+                        </div>
+                        <h2>Hackaton mellan studenter och företag</h2>
+                        <img src="http://www.dn.se/Images/2011/10/24/hackare683.jpg" alt="banana">
+                        <div id="articleArticleIngress8" class="articleArticleIngressText ">
+                            <b>Ett hackaton mellan studentföreningen SPIIK från Linnéuniversitetet och företagen
+                                Infomaker och Gota Media är i full gång</b>
+                        </div>
+                        <div id="articleArticleTextWrapper">
+                            <p> Idéer och koncept för framtidens nyhetskällor
+                            produceras i mängder men bara en idé kan vinna. Vinnaren presenteras senare under
+                            dagen</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
         <div class="pageHolderDiv">
@@ -78,7 +184,7 @@
                         <div class="articleArticleTextImageWrapper">
 
                             <div class="articleArticleText">
-                                <p>En massa text om massot med saker bla bla bla bla bla bla bla</p>
+                                <p>Planer på att utveckla och rusta upp Ölandsbron cirkulerar hos kommunen.</p>
                             </div>
                             <div class="articleArticleImage">
                                 <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/%C3%96landsbron.jpg" alt="banana">
@@ -114,13 +220,13 @@
                                 <p>3.</p>
                             </div>
                             <div class="articleArticleTitle">
-                                <h3>Hackaton mellan studenter...</h3>
+                                <h3>Hackaton mellan studenter..</h3>
                             </div>
                         </div>
                         <div class="articleArticleTextImageWrapper">
 
                             <div class="articleArticleText">
-                                <p>Ett hackaton mellan studentföreningen</p>
+                                <p>Ett hackaton mellan studentföreningen..</p>
                             </div>
                             <div class="articleArticleImage">
                                 <img src="http://www.dn.se/Images/2011/10/24/hackare683.jpg" alt="banana">
@@ -182,14 +288,15 @@
                     <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/%C3%96landsbron.jpg" alt="banana">
                     <div id="articleArticleIngress6" class="articleArticleIngressText ">
                         <b>Planer på att utveckla och rusta upp Ölandsbron cirkulerar hos kommunen.
-                Något som behöver genomföras men som hindras av ekonomin.</b>
+                            Något som behöver genomföras men som hindras av ekonomin.</b>
                     </div>
                     <div id="articleArticleTextWrapper">
                         <p>Ölandsbron är i behov av en renovering. Detta märktes av kustbevakningen då flera
-muttrar börjat lossna från bron och träffat hytten. Flera anmälningar till kommunen
-samt polisen kring liknande händelser har rapporterats in. Ansvarig på kommunen ser
-seriöst på problemet och har sedan tre veckor tillbaka startar ett renoveringsprojekt av
-Ölandsbron som tyvärr bromsas av ekonomin. </p>
+                            muttrar börjat lossna från bron och träffat hytten. Flera anmälningar till kommunen
+                            samt polisen kring liknande händelser har rapporterats in. Ansvarig på kommunen ser
+                            seriöst på problemet och har sedan tre veckor tillbaka startar ett renoveringsprojekt av
+                            Ölandsbron som tyvärr bromsas av ekonomin.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -204,11 +311,11 @@ seriöst på problemet och har sedan tre veckor tillbaka startar ett renoverings
                     <img src="http://gfx.aftonbladet-cdn.se/image/14989993/800/normal/e297c722a292c/bilbrand.jpg" alt="banana">
                     <div id="articleArticleIngress7" class="articleArticleIngressText ">
                         <b>Två bilar i kraftig brand på central gata i Kalmar. Polis och brandkår är på plats och har
-kontroll på situationen.</b>
+                                kontroll på situationen.</b>
                     </div>
                     <div id="articleArticleTextWrapper">
                         <p> Esplanaden där branden inträffade är tillfälligt avstängd och polis
-på plats styr om trafiken.</p>
+                            på plats styr om trafiken.</p>
                     </div>
                 </div>
             </div>
@@ -223,12 +330,12 @@ på plats styr om trafiken.</p>
                     <img src="http://www.dn.se/Images/2011/10/24/hackare683.jpg" alt="banana">
                     <div id="articleArticleIngress8" class="articleArticleIngressText ">
                         <b>Ett hackaton mellan studentföreningen SPIIK från Linnéuniversitetet och företagen
-Infomaker och Gota Media är i full gång</b>
+                            Infomaker och Gota Media är i full gång</b>
                     </div>
                     <div id="articleArticleTextWrapper">
                         <p> Idéer och koncept för framtidens nyhetskällor
-produceras i mängder men bara en idé kan vinna. Vinnaren presenteras senare under
-dagen</p>
+                        produceras i mängder men bara en idé kan vinna. Vinnaren presenteras senare under
+                        dagen</p>
                     </div>
                 </div>
             </div>
@@ -246,9 +353,9 @@ dagen</p>
                     </div>
                     <div id="articleArticleTextWrapper">
                         <p> Mannen har en våldsam
-kanin i koppel med sig och anses vara extremt farlig och hotsam. Polisen uppmanar
-omgivningen att inte ta kontakt med mannen och helt ignorera honom. Ring 114 14 om
-du ser honom och tipsa polisen om position. </p>
+                            kanin i koppel med sig och anses vara extremt farlig och hotsam. Polisen uppmanar
+                            omgivningen att inte ta kontakt med mannen och helt ignorera honom. Ring 114 14 om
+                            du ser honom och tipsa polisen om position. </p>
                     </div>
                 </div>
             </div>
@@ -266,12 +373,17 @@ du ser honom och tipsa polisen om position. </p>
                     </div>
                     <div id="articleArticleTextWrapper">
                         <p> Snö i mängder och kyla
-drar in över hela Sverige. Delar av norra Sverige har fått sina första snöflingor och igår
-hälsade dagisbarnen på Nyckelpigan i Stockholm snön välkommen genom att bygga
-snögubbar. </p>
+                            drar in över hela Sverige. Delar av norra Sverige har fått sina första snöflingor och igår
+                            hälsade dagisbarnen på Nyckelpigan i Stockholm snön välkommen genom att bygga
+                            snögubbar. </p>
                     </div>
                 </div>
             </div>
+
+
+
+
+
         </div>
       </div>
     </div>
