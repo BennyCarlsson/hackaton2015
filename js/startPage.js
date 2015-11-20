@@ -10,6 +10,10 @@ sp.init = function(){
     if(sp.IsEmergency()){
         var emergencyButtonView = sp.vue.emergencyView(sp.vue.emergencyButtonTemplate());
         sp.vue.mountEmergencyButtonView(emergencyButtonView);
+    }else{
+        var hidehistoryemergency = document.querySelector("#historyEmergencyNewsWrapper");
+        hidehistoryemergency.classList.add("articleHiddenHistoryArticle");
+
     }
 
     sp.css.buildAnimationZoomIn();
@@ -21,8 +25,8 @@ sp.init = function(){
 };
 
 sp.IsEmergency = function(){
-    return true;
-    //return Math.floor((Math.random() * 4) + 1) < 3;
+    //return true;
+    return Math.floor((Math.random() * 4) + 1) < 3;
 };
 
 sp.vue.emergencyView = function(EmergencyButtonTemplate){
