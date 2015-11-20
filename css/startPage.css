@@ -116,7 +116,7 @@ html, body {
     height: 34px;
     width: 34px;
     margin: 16px;
-
+    z-index: 10;
     text-align: center;
     line-height: 34px;
     background-color: rgba(211, 211, 211, 0.42);

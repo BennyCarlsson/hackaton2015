@@ -15,7 +15,10 @@
         <div>
             <div id="historyPage">
                 <div id="articlePage">
-                    <div id="articlePageArticleHeader"></div>
+                    <div class="articlePageArticleHeader">
+                        <i class="material-icons logo">folder</i>
+                        <i class="material-icons settingsLogo">settings</i>
+                    </div>
                     <div class="articleArticleWrapper">
                         <div class="articleArticleDiv">
                             <div class="artcleTitleNumberWrap">
@@ -23,15 +26,15 @@
                                     <p>1.</p>
                                 </div>
                                 <div class="articleArticleTitle">
-                                    <h3>This is a Title</h3>
+                                    <h3>Ny Ölandsbro på gång</h3>
                                 </div>
                             </div>
                             <div class="articleArticleTextImageWrapper">
                                 <div class="articleArticleText">
-                                    <p>En massa text om massot med saker bla bla bla bla bla bla bla</p>
+                                    <p></p>
                                 </div>
                                 <div class="articleArticleImage">
-                                    <img src="image/sbanana.jpg" alt="banana">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/%C3%96landsbron.jpg" alt="banana">
                                 </div>
                             </div>
                         </div>
@@ -59,7 +62,9 @@
         </div>
         <div>
             <div id="articlePage">
-                <div id="articlePageArticleHeader"></div>
+                <div class="articlePageArticleHeader">
+                    <img src="image/logo.png" class="logo" alt="">
+                </div>
                 <div class="articleArticleWrapper">
                     <div class="articleArticleDiv" onclick="onClickShowArticle(1)">
                         <div class="articleTitleNumberWrap">
@@ -67,15 +72,16 @@
                                 <p>1.</p>
                             </div>
                             <div class="articleArticleTitle">
-                                <h3>This is a Title</h3>
+                                <h3>Ny Ölandsbro på gång</h3>
                             </div>
                         </div>
                         <div class="articleArticleTextImageWrapper">
+
                             <div class="articleArticleText">
                                 <p>En massa text om massot med saker bla bla bla bla bla bla bla</p>
                             </div>
                             <div class="articleArticleImage">
-                                <img src="image/sbanana.jpg" alt="banana">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/%C3%96landsbron.jpg" alt="banana">
                             </div>
                         </div>
                     </div>
@@ -87,15 +93,16 @@
                                 <p>2.</p>
                             </div>
                             <div class="articleArticleTitle">
-                                <h3>This is a Title</h3>
+                                <h3>Bilbrand i Kalmar</h3>
                             </div>
                         </div>
                         <div class="articleArticleTextImageWrapper">
+
                             <div class="articleArticleText">
-                                <p>En massa text om massot med saker bla bla bla bla bla bla bla</p>
+                                <p>Två bilar i kraftig brand på central gata i Kalmar. Polis och brandkår..</p>
                             </div>
                             <div class="articleArticleImage">
-                                <img src="image/sbanana.jpg" alt="banana">
+                                <img src="http://gfx.aftonbladet-cdn.se/image/14989993/800/normal/e297c722a292c/bilbrand.jpg" alt="banana">
                             </div>
                         </div>
                     </div>
@@ -107,15 +114,16 @@
                                 <p>3.</p>
                             </div>
                             <div class="articleArticleTitle">
-                                <h3>This is a Title</h3>
+                                <h3>Hackaton mellan studenter...</h3>
                             </div>
                         </div>
                         <div class="articleArticleTextImageWrapper">
+
                             <div class="articleArticleText">
-                                <p>En massa text om massot med saker bla bla bla bla bla bla bla</p>
+                                <p>Ett hackaton mellan studentföreningen</p>
                             </div>
                             <div class="articleArticleImage">
-                                <img src="image/sbanana.jpg" alt="banana">
+                                <img src="http://www.dn.se/Images/2011/10/24/hackare683.jpg" alt="banana">
                             </div>
                         </div>
                     </div>
@@ -127,15 +135,16 @@
                                 <p>4.</p>
                             </div>
                             <div class="articleArticleTitle">
-                                <h3>This is a Title</h3>
+                                <h3>Galen man i dreads går lös...</h3>
                             </div>
                         </div>
                         <div class="articleArticleTextImageWrapper">
+
                             <div class="articleArticleText">
-                                <p>En massa text om massot med saker bla bla bla bla bla bla bla</p>
+                                <p>En man iklädd röd jacka och med dreads går fritt i Kalmar.</p>
                             </div>
                             <div class="articleArticleImage">
-                                <img src="image/sbanana.jpg" alt="banana">
+                                <img src="https://scontent-arn2-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/311569_10150946049127469_2127964924_n.jpg?oh=0f66c44ec3809fa932264b844d61560e&oe=56F4FFDC" alt="banana">
                             </div>
                         </div>
                     </div>
@@ -147,15 +156,16 @@
                                 <p>5.</p>
                             </div>
                             <div class="articleArticleTitle">
-                                <h3>This is a Title</h3>
+                                <h3>Vargavintern står runt hörnet</h3>
                             </div>
                         </div>
                         <div class="articleArticleTextImageWrapper">
+
                             <div class="articleArticleText">
-                                <p>En massa text om massot med saker bla bla bla bla bla bla bla</p>
+                                <p>Väderprognosen lovar snö till helgen och vintern är på gång. </p>
                             </div>
                             <div class="articleArticleImage">
-                                <img src="image/sbanana.jpg" alt="banana">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Ax_med_rimfrost_01.jpg/250px-Ax_med_rimfrost_01.jpg" alt="banana">
                             </div>
                         </div>
                     </div>
@@ -168,10 +178,18 @@
                     onclick="onClickRemoveArticle()">
                         <i class="material-icons">close</i>
                     </div>
-                    <h2>Banan</h2>
-                    <img src="image/sbanana.jpg" alt="banana">
+                    <h2>Ny Ölandsbro på gång</h2>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/%C3%96landsbron.jpg" alt="banana">
+                    <div id="articleArticleIngress6" class="articleArticleIngressText ">
+                        <b>Planer på att utveckla och rusta upp Ölandsbron cirkulerar hos kommunen.
+                Något som behöver genomföras men som hindras av ekonomin.</b>
+                    </div>
                     <div id="articleArticleTextWrapper">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                        <p>Ölandsbron är i behov av en renovering. Detta märktes av kustbevakningen då flera
+muttrar börjat lossna från bron och träffat hytten. Flera anmälningar till kommunen
+samt polisen kring liknande händelser har rapporterats in. Ansvarig på kommunen ser
+seriöst på problemet och har sedan tre veckor tillbaka startar ett renoveringsprojekt av
+Ölandsbron som tyvärr bromsas av ekonomin. </p>
                     </div>
                 </div>
             </div>
@@ -182,10 +200,15 @@
                     onclick="onClickRemoveArticle()">
                         <i class="material-icons">close</i>
                     </div>
-                    <h2>Banan2</h2>
-                    <img src="image/sbanana.jpg" alt="banana">
+                    <h2>Bilbrand i Kalmar</h2>
+                    <img src="http://gfx.aftonbladet-cdn.se/image/14989993/800/normal/e297c722a292c/bilbrand.jpg" alt="banana">
+                    <div id="articleArticleIngress7" class="articleArticleIngressText ">
+                        <b>Två bilar i kraftig brand på central gata i Kalmar. Polis och brandkår är på plats och har
+kontroll på situationen.</b>
+                    </div>
                     <div id="articleArticleTextWrapper">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                        <p> Esplanaden där branden inträffade är tillfälligt avstängd och polis
+på plats styr om trafiken.</p>
                     </div>
                 </div>
             </div>
@@ -196,10 +219,16 @@
                     onclick="onClickRemoveArticle()">
                         <i class="material-icons">close</i>
                     </div>
-                    <h2>Banan3</h2>
-                    <img src="image/sbanana.jpg" alt="banana">
+                    <h2>Hackaton mellan studenter och företag</h2>
+                    <img src="http://www.dn.se/Images/2011/10/24/hackare683.jpg" alt="banana">
+                    <div id="articleArticleIngress8" class="articleArticleIngressText ">
+                        <b>Ett hackaton mellan studentföreningen SPIIK från Linnéuniversitetet och företagen
+Infomaker och Gota Media är i full gång</b>
+                    </div>
                     <div id="articleArticleTextWrapper">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                        <p> Idéer och koncept för framtidens nyhetskällor
+produceras i mängder men bara en idé kan vinna. Vinnaren presenteras senare under
+dagen</p>
                     </div>
                 </div>
             </div>
@@ -210,10 +239,16 @@
                     onclick="onClickRemoveArticle()">
                         <i class="material-icons">close</i>
                     </div>
-                    <h2>Banan4</h2>
-                    <img src="image/sbanana.jpg" alt="banana">
+                    <h2>Galen man i dreads går lös i Kalmar</h2>
+                    <img src="https://scontent-arn2-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/311569_10150946049127469_2127964924_n.jpg?oh=0f66c44ec3809fa932264b844d61560e&oe=56F4FFDC" alt="banana">
+                    <div id="articleArticleIngress9" class="articleArticleIngressText ">
+                        <b>En man iklädd röd jacka och med dreads går fritt i Kalmar.</b>
+                    </div>
                     <div id="articleArticleTextWrapper">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                        <p> Mannen har en våldsam
+kanin i koppel med sig och anses vara extremt farlig och hotsam. Polisen uppmanar
+omgivningen att inte ta kontakt med mannen och helt ignorera honom. Ring 114 14 om
+du ser honom och tipsa polisen om position. </p>
                     </div>
                 </div>
             </div>
@@ -224,10 +259,16 @@
                     onclick="onClickRemoveArticle()">
                         <i class="material-icons">close</i>
                     </div>
-                    <h2>Banan5</h2>
-                    <img src="image/sbanana.jpg" alt="banana">
+                    <h2>Vargavintern står runt hörnet</h2>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Ax_med_rimfrost_01.jpg/250px-Ax_med_rimfrost_01.jpg" alt="banana">
+                    <div id="articleArticleIngress10" class="articleArticleIngressText ">
+                        <b>Väderprognosen lovar snö till helgen och vintern är på gång. </b>
+                    </div>
                     <div id="articleArticleTextWrapper">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                        <p> Snö i mängder och kyla
+drar in över hela Sverige. Delar av norra Sverige har fått sina första snöflingor och igår
+hälsade dagisbarnen på Nyckelpigan i Stockholm snön välkommen genom att bygga
+snögubbar. </p>
                     </div>
                 </div>
             </div>

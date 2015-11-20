@@ -109,8 +109,8 @@ sp.vue.mountEmergencyButtonView = function(EmergencyButtonView){
 // returns video json
 sp.dal.getVideo = function(){
     return {
-        videoSrc: "video/vidTest.mp4",
-        skips: [4.5, 12, 22, 27],
+        videoSrc: "video/FAMAfilm.mp4",
+        skips: [5, 11, 17, 27, 35, 42],
         stories: ["", "", "", ""]
     };
 };
@@ -137,6 +137,8 @@ sp.vue.videoView = function(VideoTemplate, data){
         methods: {
             startPagecloseVideo: function(){
                 var el = this.$el.querySelector(".startPageVideoWrap");
+                var videoEl = this.$el.querySelector("video");
+                videoEl.src = "";
                 el.classList.add("animmaSmall");
 
                 var self = this;
@@ -189,6 +191,7 @@ sp.vue.videoView = function(VideoTemplate, data){
             var el = this.$el.querySelector(".startPageVideoWrap");
 
             function ev(){
+                videoEl.src = data.videoSrc;
                 el.removeEventListener("animationend", ev);
             }
 
@@ -255,7 +258,7 @@ sp.vue.videoTemplate = function(){
         template: '<div class="startPageVideoWrap animmaBig">'+
         '<div><div v-on:click="startPagecloseVideo" class="startPageCloseVideo"><i class="material-icons">arrow_back</i></div>'+
         '<div><div class="startPageVideoCounterWrap"><div class="startPageVideoCounterText"></div></div><progress value="0" max="100" class="startPageVideoCounter"></progress></div>'+
-        '<video v-on:click="startPageVideoSkip" v-bind:src="videoSrc" class="startPageVideo animmaBig" autoplay></video>'+
+        '<video v-on:click="startPageVideoSkip" src="" class="startPageVideo animmaBig" autoplay controls style="transform: scale(2.6);"></video>'+
         '</div></div>'
     });
 };
